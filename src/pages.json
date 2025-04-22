@@ -1,0 +1,63 @@
+{
+	// 数组(pages)中第一项表示应用启动页（参考：https://uniapp.dcloud.io/collocation/pages）
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/data/index",
+			"style": {
+				"navigationBarTitleText": "数据"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages-log/index",
+			"style": {
+				"navigationBarTitleText": "日志"
+			}
+		}
+	],
+	// 全局配置
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "自用 UniApp 模板",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	// tabBar
+	"tabBar": {
+		"color": "#BFBFBF",
+		"selectedColor": "#3E3E40",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/image/tabbar_0.png",
+				"selectedIconPath": "static/image/tabbar_select_0.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/data/index",
+				"iconPath": "static/image/tabbar_1.png",
+				"selectedIconPath": "static/image/tabbar_select_1.png",
+				"text": "数据"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"iconPath": "static/image/tabbar_1.png",
+				"selectedIconPath": "static/image/tabbar_select_1.png",
+				"text": "我的"
+			}
+		]
+	}
+}
