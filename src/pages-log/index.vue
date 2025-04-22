@@ -98,15 +98,15 @@ export default {
     touchDevice () {
       const deviceInfo = uni.getSystemInfoSync()
       this.log.add({
-        title: '系统信息',
-        data: deviceInfo
+        [Log.keyTitle]: '系统信息',
+        [Log.keyData]: deviceInfo
       })
     },
     // 用户信息
     touchUser () {
       this.log.add({
-        title: '用户信息',
-        data: '用户信息'
+        [Log.keyTitle]: '用户信息',
+        [Log.keyData]: '用户信息'
       })
     },
   }
@@ -222,7 +222,7 @@ export default {
   padding: 20rpx;
 }
 .log-container .log-list .log-list-item .log-list-item-content .log-list-item-content-text {
-  font-size: 32rpx;
+  font-size: 30rpx;
   width: 100%;
   word-wrap: break-word;
   word-break: break-all;

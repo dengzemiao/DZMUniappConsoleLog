@@ -90,6 +90,7 @@
     {
         "path": "pages-log/index",
         "style": {
+			"navigationStyle": "default",
             "navigationBarTitleText": "日志"
         }
     }
