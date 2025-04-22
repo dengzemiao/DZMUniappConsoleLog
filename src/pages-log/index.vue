@@ -44,6 +44,12 @@
         <view class="log-list-item-divider"></view>
       </view>
     </view>
+    <!-- footer -->
+    <view class="log-footer">
+      <view class="log-footer-item">
+        <view class="log-footer-item-text">作者wx：dengzemiao（大前端技术群）</view>
+      </view>
+    </view>
 	</view>
 </template>
 
@@ -144,7 +150,7 @@ export default {
 .log-container {
 	width: 100%;
 	height: 100%;
-	background-color: #f00;
+  background-color: #fff;
   box-sizing: border-box;
 }
 .log-container .log-tool {
@@ -225,6 +231,20 @@ export default {
 .log-container .log-list .log-list-item .log-list-item-divider {
   width: 100%;
   height: 1rpx;
-  background-color: #fff;
+}
+.log-container .log-footer {
+  width: 100%;
+  height: 60rpx;
+}
+.log-container .log-footer .log-footer-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.log-container .log-footer .log-footer-item .log-footer-item-text {
+  font-size: 24rpx;
+  color: #999;
 }
 </style>

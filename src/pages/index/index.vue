@@ -1,8 +1,21 @@
 <template>
 	<view class="content">
+		<!-- 操作按钮 -->
 		<button @click="handleClick">查看日志（{{ open ? '开启中' : '关闭中' }}）</button>
 		<button @click="handleAddSuccess">添加成功日志</button>
 		<button @click="handleAddError">添加失败日志</button>
+		<!-- 提示 -->
+		<view class="hint-text">
+			* 推荐用于记录所有的 `网络请求`、`catch错误`、`调试日志` ....
+			<br>
+			* 建议使用细节：
+			<br>
+			1、日志开关使用暗门的方式进行开启，例如连点版本号多少下。
+			<br>
+			2、启动后，例如可以长按某个文案，进入日志页面查看日志。
+			<br>
+			3、日志设置开关状态，是本地会缓存的，可以在启动函数中调用读取缓存开关状态函数，确保第一时间使用上上次的开启状态，不读取默认是关闭状态。
+		</view>
 	</view>
 </template>
 
@@ -61,5 +74,10 @@ export default {
 <style>
 button {
 	margin: 10px;
+}
+.hint-text {
+	padding: 20rpx;
+  font-size: 26rpx;
+  color: #999;
 }
 </style>
