@@ -24,9 +24,9 @@
 
 * `Uniapp` 日志控制台输出案例：
 
-    注意： `Log.add()` 的写法在 `markdown` 文件中被读取失败，可能代码代码块会显示不出来，可以看案例代码图片，怎么使用 `常规参数` 作为 `key`，例如：
+    注意： `Log.add()` 怎么使用 `常规参数` 作为 `key`，例如：
 
-    `Log.add({[Log.keySuccess]: false, [Log.keyTitle]: '添加失败日志', [Log.keyData]: { a: 1 }, })`
+    `Log.add({[Log.keySuccess]: false, [Log.keyTitle]: '添加失败日志', [Log.keyData]: { a: 1 }, b: 2})`
     
     ```js
     <script>
@@ -43,11 +43,11 @@
                 // Log.add()
                 // 有数据
                 Log.add({
-                    [Log.keyTitle]: '添加成功日志',
+                    // [Log.keyTitle]: '添加成功日志',
                     // 使用规定好的参数
-                    [Log.keyData]: {
-                            a: 1
-                    },
+                    // [Log.keyData]: {
+                    //     a: 1
+                    // },
                     // 使用未规定的参数
                     b: 2
                 })
@@ -55,11 +55,13 @@
             // 添加失败日志
             handleAddError () {
                 Log.add({
-                    [Log.keySuccess]: false
-                    [Log.keyTitle]: '添加失败日志',
-                    [Log.keyData]: {
-                        a: 1
-                    },
+                    // [Log.keySuccess]: false
+                    // [Log.keyTitle]: '添加失败日志',
+                    // [Log.keyData]: {
+                    //     a: 1
+                    // },
+                    // 这么写也可以 == [Log.keySuccess]: false
+                    success: false
                 })
             }
         }
@@ -132,7 +134,7 @@
     Log.setOpen(true)
     
     // 如果需要使用本地缓存状态，可以调用此方法，例如：项目生命周期的最开始调用此方法
-    // 不调用则每次使用默认的关闭状态，需要每次手动启动日志开关，调用则会
+    // 不调用则使用默认的关闭状态，需要每次手动启动日志开关，如果需要同步之前的开关状态，这个操作只需要在启动函数里面同步一次就行了，一般都是启动的时候需要从头到尾记录到日志，例如下面的：onLaunch 函数，不需要每个页面重复去同步。
     Log.getOpen()
     ```
 
