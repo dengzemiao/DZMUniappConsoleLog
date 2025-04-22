@@ -1,10 +1,10 @@
 # Uniapp 日志工具（DZMUniappConsoleLog）
 
-- Uniapp 控制台日志输出，简单易用，协助快速排查调试问题。
+- `Uniapp` 控制台日志输出，简单易用，协助快速排查调试问题。
 
-- 初始环境 node：v14.15.0 npm: v6.14.8
+- 初始环境 `node：v14.15.0` `npm: v6.14.8`
 
-- 支持：vue2、vue3
+- 支持：`vue2`、`vue3`
 
 ## 一、简介
 
