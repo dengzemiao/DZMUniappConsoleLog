@@ -20,6 +20,10 @@
 
 * `Uniapp` 日志控制台输出案例：
 
+    注意： `Log.add()` 的写法在 `markdown` 文件中被读取失败，可能代码代码块会显示不出来，可以看案例代码图片，怎么使用 `常规参数` 作为 `key`，例如：
+
+    `Log.add({[Log.keySuccess]: false, [Log.keyTitle]: '添加失败日志', [Log.keyData]: { a: 1 }, })`
+
     ```js
     <script>
     import Log from '@/pages-log/index'
