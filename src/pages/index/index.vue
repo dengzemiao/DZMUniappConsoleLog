@@ -43,8 +43,8 @@ export default {
 			// Log.add()
 			// 有数据
 			Log.add({
-				[Log.keyTitle]: '添加成功日志',
 				// 使用规定好的参数
+				[Log.keyTitle]: '添加成功日志',
 				[Log.keyData]: {
 					a: 1
 				},
