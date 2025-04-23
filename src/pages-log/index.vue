@@ -47,7 +47,7 @@
     <!-- footer -->
     <view class="log-footer">
       <view class="log-footer-item">
-        <view class="log-footer-item-text">作者wx：dengzemiao（大前端技术群）</view>
+        <view class="log-footer-item-text" @click="touchCopyAuthor">作者wx：dengzemiao（大前端技术群），欢迎加入，点击复制</view>
       </view>
     </view>
 	</view>
@@ -80,15 +80,7 @@ export default {
     },
     // 复制日志
     touchCopy (item) {
-      uni.setClipboardData({
-        data: JSON.stringify(item, null, '　'),
-				success: () => {
-					this.log.toast('拷贝成功')
-				},
-				fail: () => {
-					this.log.toast('拷贝失败')
-				}
-      })
+      this.copy(JSON.stringify(item, null, 2))
     },
     // 清空日志
     touchClear () {
@@ -109,6 +101,27 @@ export default {
         [Log.keyData]: '用户信息'
       })
     },
+    // 复制作者
+    touchCopyAuthor () {
+      this.copy('dengzemiao')
+    },
+    // 拷贝
+    copy (text) {
+      uni.setClipboardData({
+        data: text,
+        success: () => {
+          this.log.toast('拷贝成功')
+        },
+        fail: (err) => {
+          this.log.add({
+            [Log.keySuccess]: false,
+            [Log.keyTitle]: '拷贝失败',
+            [Log.keyData]: err
+          })
+          this.log.toast('拷贝失败')
+        }
+      })
+    }
   }
 }
 </script>
@@ -220,6 +233,7 @@ export default {
 .log-container .log-list .log-list-item .log-list-item-content {
   width: 100%;
   padding: 20rpx;
+  box-sizing: border-box;
 }
 .log-container .log-list .log-list-item .log-list-item-content .log-list-item-content-text {
   font-size: 30rpx;

@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="page-content">
 		<!-- 操作按钮 -->
 		<button @click="handleClick">查看日志（{{ open ? '开启中' : '关闭中' }}）</button>
 		<button @click="handleAddSuccess">添加成功日志</button>
@@ -47,9 +47,9 @@ export default {
 			// 有数据
 			Log.add({
 				// 使用规定好的参数
-				[Log.keyTitle]: '添加成功日志',
+				[Log.keyTitle]: '添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志',
 				[Log.keyData]: {
-					a: 1
+					a: '添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志添加成功日志'
 				},
 				// 使用未规定的参数
 				b: 2
@@ -75,12 +75,22 @@ export default {
 </script>
 
 <style>
+.page-content {
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 button {
+	width: 500rpx;
 	margin: 10px;
 }
 .hint-text {
 	padding: 20rpx;
   font-size: 26rpx;
   color: #999;
+	box-sizing: border-box;
 }
 </style>
