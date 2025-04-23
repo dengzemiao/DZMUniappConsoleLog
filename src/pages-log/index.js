@@ -70,7 +70,7 @@ const Log = {
   // 同步本地日志开启状态，方便下次打开时保持日志开关状态
   // 如果需要使用本地缓存状态，可以调用此方法，例如：项目生命周期的最开始调用此方法
   getOpen () {
-    this.open = uni.getStorageSync('DZM_CONSOLE_LOG')
+    this.open = uni.getStorageSync('DZM_CONSOLE_LOG') || false
   },
 
   // 设置日志开启状态，并同步到本地
