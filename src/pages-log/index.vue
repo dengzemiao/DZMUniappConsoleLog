@@ -27,7 +27,7 @@
             <!-- 日志时间 -->
             <view class="log-list-item-date log-text-ell">【{{ item.index }}】{{ item.date }}</view>
             <!-- 弹簧 -->
-            <view class="log-spacer"></view>
+            <!-- <view class="log-spacer"></view> -->
             <!-- 日志复制 -->
             <view class="log-list-item-btn" @click="touchCopy(item)">复制</view>
             <!-- 日志展开状态 -->
@@ -215,6 +215,9 @@ export default {
 .log-container .log-list .log-list-item .log-list-item-header .log-list-item-tool .log-list-item-date {
   color: #fff;
   font-size: 30rpx;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .log-container .log-list .log-list-item .log-list-item-header .log-list-item-tool .log-list-item-btn {
   margin-left: 16rpx;
@@ -223,6 +226,7 @@ export default {
   background-color: #fff;
   color: #000;
   font-size: 22rpx;
+  flex-shrink: 0;
 }
 .log-container .log-list .log-list-item .log-list-item-header .log-list-item-title {
   color: #fff;
