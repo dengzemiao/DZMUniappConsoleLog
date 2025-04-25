@@ -16,12 +16,18 @@
 			<br>
 			3、日志设置开关状态，是本地会缓存的，可以在启动函数中调用读取缓存开关状态函数，确保第一时间使用上上次的开启状态，不读取默认是关闭状态。
 		</view>
+		<!-- 日志悬浮按钮：position: fixed -->
+		<LogButton :fixed="true" />
 	</view>
 </template>
 
 <script>
 import Log from '@/pages-log/index'
+import LogButton from '@/pages-log/button'
 export default {
+	components: {
+		LogButton
+	},
 	data () {
 		return {
 			// 日志开启状态

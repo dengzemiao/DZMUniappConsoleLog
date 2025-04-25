@@ -150,6 +150,86 @@
         // ... 其他初始化操作
     },
     ```
+## 四、日志悬浮入口按钮
 
+*   悬浮按钮可拖拽挪动，方便快捷进入日志页面。
 
+*   悬浮按钮会根据 `日志开关状态` 内部判断是否显示，只需要在需要的页面添加一下 `日志按钮组件`：
 
+    ```html
+    <template>
+        <view class="page-content">
+            <!-- 页面其他视图 -->
+            ...
+            <!-- 日志悬浮按钮：position: fixed -->
+            <LogButton></LogButton>
+            <!-- 日志悬浮按钮：position: absolute 方便根据场景适配 -->
+            <!-- <LogButton :fixed="false" /> -->
+        </view>
+    </template>
+
+    <script>
+    import LogButton from '@/pages-log/button'
+    export default {
+        components: {
+            LogButton
+        },
+        ...
+    }
+    ```
+
+*   悬浮按钮支持的参数，如果需要调整，推荐直接修改源码，这样只需要在页面引入即可
+
+    ```js
+    // 为了防止获取宽高api兼容问题，悬浮按钮内部不获取设备宽高，确保兼容无问题
+    import Log from './index.js'
+    export default {
+      props: {
+        // 初始化按钮定位坐标
+        initPosition: {
+          type: Object,
+          default: () => ({ x: 10, y: 100 })
+        },
+        // 是否进行固定，true: 固定(fixed)，false: 不固定(absolute)
+        fixed: {
+          type: Boolean,
+          default: true
+        },
+        // 屏幕尺寸限制，fixed=true: 生效限制，fixed=false: 不生效限制，因为不好确定父元素尺寸
+        screenLimit: {
+          type: Boolean,
+          default: true
+        },
+        // 按钮大小，默认50px
+        size: {
+          type: Number,
+          default: 50
+        },
+        // 按钮背景颜色，默认蓝色
+        color: {
+          type: String,
+          default: '#1E8BF1'
+        },
+        // 按钮圆角大小，默认25px（圆形）
+        borderRadius: {
+          type: Number,
+          default: 25
+        },
+        // 按钮层级，默认9999（确保在最上层）
+        zIndex: {
+          type: Number,
+          default: 9999
+        },
+        // 按钮文字大小，默认14px
+        fontSize: {
+          type: Number,
+          default: 14
+        },
+        // 按钮文字颜色，默认白色
+        fontColor: {
+          type: String,
+          default: '#FFFFFF'
+        },
+      },
+    }
+    ```
