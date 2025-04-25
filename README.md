@@ -202,11 +202,6 @@
           type: Boolean,
           default: true
         },
-        // 屏幕尺寸限制，fixed=true: 生效限制，fixed=false: 不生效限制，因为不好确定父元素尺寸
-        screenLimit: {
-          type: Boolean,
-          default: true
-        },
         // 按钮大小，默认50px
         size: {
           type: Number,
