@@ -3,18 +3,7 @@
   <view
     v-if="log.open"
     class="log-float-button"
-    :style="{ 
-      position: fixed ? 'fixed' : 'absolute',
-      width: size + 'px',
-      height: size + 'px',
-      left: position.x + 'px',
-      top: position.y + 'px',
-      backgroundColor: color,
-      borderRadius: borderRadius + 'px',
-      fontSize: fontSize + 'px',
-      color: fontColor,
-      zIndex: zIndex,
-    }"
+    :style="logFloatButtonComputed"
     @touchstart="onTouchStart"
     @touchmove="onTouchMove"
     @touchend="onTouchEnd"
@@ -29,7 +18,7 @@
 import Log from './index.js'
 export default {
   props: {
-    // 初始化按钮定位坐标
+    // 初始化按钮定位坐标（单位：px 方便计算拖拽位置）
     initPosition: {
       type: Object,
       default: () => ({ x: 10, y: 100 })
@@ -39,35 +28,51 @@ export default {
       type: Boolean,
       default: true
     },
-    // 按钮大小，默认50px
+    // 按钮大小（单位：px）
     size: {
       type: Number,
       default: 50
     },
-    // 按钮背景颜色，默认蓝色
-    color: {
+    // 按钮背景颜色
+    backgroundColor: {
       type: String,
       default: '#1E8BF1'
     },
-    // 按钮圆角大小，默认25px（圆形）
+    // 按钮圆角大小（单位：px）
     borderRadius: {
       type: Number,
       default: 25
     },
-    // 按钮层级，默认9999（确保在最上层）
+    // 按钮层级
     zIndex: {
       type: Number,
       default: 9999
     },
-    // 按钮文字大小，默认14px
+    // 按钮文字大小（单位：px）
     fontSize: {
       type: Number,
       default: 14
     },
-    // 按钮文字颜色，默认白色
+    // 按钮文字颜色
     fontColor: {
       type: String,
       default: '#FFFFFF'
+    },
+  },
+  computed: {
+    logFloatButtonComputed () {
+      return this.obj2strStyle({
+        'position': this.fixed ? 'fixed' : 'absolute',
+        'width': this.size + 'px',
+        'height': this.size + 'px',
+        'left': this.position.x + 'px',
+        'top': this.position.y + 'px',
+        'background-color': this.backgroundColor,
+        'border-radius': this.borderRadius + 'px',
+        'font-size': this.fontSize + 'px',
+        'color': this.fontColor,
+        'z-index': this.zIndex,
+      })
     },
   },
   data() {
@@ -87,6 +92,15 @@ export default {
     }
   },
   methods: {
+    // 对象转字符串 style
+    obj2strStyle(obj) {
+      let style = '';
+      for (let key in obj) {
+        const val = obj[key];
+        style += `${key}:${val};`;
+      }
+      return style;
+    },
     // 跳转日志页面
     touchLog() {
       this.log.go()

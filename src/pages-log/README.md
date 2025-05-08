@@ -186,7 +186,7 @@
     import Log from './index.js'
     export default {
       props: {
-        // 初始化按钮定位坐标
+        // 初始化按钮定位坐标（单位：px 方便计算拖拽位置）
         initPosition: {
           type: Object,
           default: () => ({ x: 10, y: 100 })
@@ -196,32 +196,32 @@
           type: Boolean,
           default: true
         },
-        // 按钮大小，默认50px
+        // 按钮大小（单位：px）
         size: {
           type: Number,
           default: 50
         },
-        // 按钮背景颜色，默认蓝色
-        color: {
+        // 按钮背景颜色
+        backgroundColor: {
           type: String,
           default: '#1E8BF1'
         },
-        // 按钮圆角大小，默认25px（圆形）
+        // 按钮圆角大小（单位：px）
         borderRadius: {
           type: Number,
           default: 25
         },
-        // 按钮层级，默认9999（确保在最上层）
+        // 按钮层级
         zIndex: {
           type: Number,
           default: 9999
         },
-        // 按钮文字大小，默认14px
+        // 按钮文字大小（单位：px）
         fontSize: {
           type: Number,
           default: 14
         },
-        // 按钮文字颜色，默认白色
+        // 按钮文字颜色
         fontColor: {
           type: String,
           default: '#FFFFFF'

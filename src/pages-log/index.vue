@@ -66,6 +66,11 @@ export default {
     // 开启日志
     touchOpen () {
       this.log.setOpen(!this.log.open)
+      if (this.log.open) {
+        this.log.toast('开启成功')
+      } else {
+        this.log.toast('关闭成功')
+      }
     },
     // 展开全部日志
     touchExpandAll () {
