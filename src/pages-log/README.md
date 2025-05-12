@@ -2,7 +2,9 @@
 
 - `Uniapp` 控制台日志输出，简单易用，协助快速排查调试问题。
 
-- 支持：`vue2`、`vue3`
+- 支持：`vue2`、`vue3`。
+
+- [Github 地址](https://github.com/dengzemiao/DZMUniappConsoleLog)
 
 ## 一、简介
 
