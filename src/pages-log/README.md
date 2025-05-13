@@ -4,7 +4,7 @@
 
 - 支持：`vue2`、`vue3`。
 
-- [Github 地址](https://github.com/dengzemiao/DZMUniappConsoleLog)
+- [Github 仓库地址](https://github.com/dengzemiao/DZMUniappConsoleLog)。
 
 ## 一、简介
 
